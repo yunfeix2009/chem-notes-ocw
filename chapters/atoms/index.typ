@@ -8,6 +8,8 @@
     #include "existence/index.typ"
     #include "schrondinger/index.typ"
     #include "orbitals/index.typ"
+    #include "energy/index.typ"
+    #include "trends/index.typ"
   ],
 )
 

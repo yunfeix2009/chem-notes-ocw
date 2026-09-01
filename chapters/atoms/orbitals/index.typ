@@ -22,7 +22,7 @@ Classifying orbitals by $n$ gives the shells, by $ell$ gives the form of the orb
 
 
 
-#align(center)[#table(
+#table(
   columns: (0.2in, 0.2in, 2.7in, 0.2in, 0.2in, 2.7in),
   rows: (0.47in, 0.46in, 1.18in, 1.18in, 1.18in, 1.24in),
   align: center + horizon,
@@ -70,7 +70,7 @@ Classifying orbitals by $n$ gives the shells, by $ell$ gives the form of the orb
   [],
   [$z$],
   [$(3/(4 pi))^(1/2) cos theta$],
-)]
+)
 
 For example, the electron of the ground-state Hydrogen atom has wave function $ Psi_(100) (r, theta, phi) = (2 e^(- r/a_0))/(a_0^(3/2)) times (1/(4pi))^(1/2), $ where $a_0$ is the _Bohr radius_, the natural length scale of hydrogen:
 

@@ -15,12 +15,14 @@
 #set heading(numbering: "1.1")
 #counter(heading).update(0)
 #include "atoms/index.typ"
+#include "molecules/index.typ"
+#include "reactions/index.typ"
 
 
 #set heading(numbering: "A.1")
 #counter(heading).update(0)
 #route-folders.update(("appendix-1",))
-// #include "appendices/index.typ"
+#include "appendices/index.typ"
 
 
 #context if render-mode.get() == "pdf" { pagebreak() }
