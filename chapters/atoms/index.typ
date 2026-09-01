@@ -3,7 +3,7 @@
 
 #show: docs-chapter.with(
   title: [Atoms],
-  route: "Atoms",
+  route: "atoms",
   children: [
     #include "existence/index.typ"
     #include "schrondinger/index.typ"
