@@ -10,6 +10,16 @@
 #let canvas(..args) = {
   potential-frame(cetz.canvas(..args))
 }
+
+#let typst-table(..args) = context {
+  let body = table(..args)
+  if target() == "html" {
+    html.elem("div", attrs: (class: "typst-table"), body)
+  } else {
+    body
+  }
+}
+
 #let ray(body, dy: 0em, tag: none) = context {
   if target() != "paged" {
     return math.arrow(body)

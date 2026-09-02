@@ -22,18 +22,18 @@ Classifying orbitals by $n$ gives the shells, by $ell$ gives the form of the orb
 
 
 
-#table(
-  columns: (0.2in, 0.2in, 2.7in, 0.2in, 0.2in, 2.7in),
-  rows: (0.47in, 0.46in, 1.18in, 1.18in, 1.18in, 1.24in),
+#let orbital-wave-functions-table = table(
+  columns: 6,
+  rows: 6,
   align: center + horizon,
-  inset: 0.05in,
+  inset: (y: 10pt),
   stroke: 0.8pt,
 
-  table.cell(colspan: 3, align: left + horizon, inset: (left: 0.16in))[
-    #title[(a) radial WF]
+  table.cell(colspan: 3, align: left + horizon)[
+    #text()[Radial Wave Functions]
   ],
-  table.cell(colspan: 3, align: left + horizon, inset: (left: 0.16in))[
-    #title[(b) angular WF]
+  table.cell(colspan: 3, align: left + horizon)[
+    #text()[Angular Wave Function]
   ],
 
   [$n$],
@@ -41,36 +41,46 @@ Classifying orbitals by $n$ gives the shells, by $ell$ gives the form of the orb
   table.cell(align: left + horizon, inset: (left: 0.18in))[$R_(n l)(r)$],
   [$l$],
   [$m_l$],
-  table.cell(align: left + horizon, inset: (left: 0.18in))[$Y_(l, m_l)(theta, phi)$],
+  table.cell(align: left + horizon, inset: (left: 0.18in))[$Y_(l m_l)(theta, phi)$],
 
   [1],
   [0],
-  [$2 (Z/a_0)^(3/2) e^(-Z r/a_0)$],
+  [$display(2 (Z/a_0)^(3/2) e^(-Z r/a_0))$],
   [0],
   [0],
-  [[$(1/(4 pi))^(1/2)$]],
+  [$display((1/(4 pi))^(1/2))$],
 
   [2],
   [0],
-  [$1/(2 sqrt(2)) (Z/a_0)^(3/2) (2 - (Z r)/a_0) e^(-(Z r)/(2 a_0))$],
+  [$display(1/(2 sqrt(2)) (Z/a_0)^(3/2) (2 - (Z r)/a_0) e^(-(Z r)/(2 a_0)))$],
   [1],
   [$x$],
-  [$(3/(4 pi))^(1/2) sin theta cos phi$],
+  [$display((3/(4 pi))^(1/2) sin theta cos phi)$],
 
   [],
   [1],
-  [$1/(2 sqrt(6)) (Z/a_0)^(3/2) (Z r/a_0) e^(-(Z r)/(2 a_0))$],
+  [$display(1/(2 sqrt(6)) (Z/a_0)^(3/2) (Z r/a_0) e^(-(Z r)/(2 a_0)))$],
   [],
   [$y$],
-  [$(3/(4 pi))^(1/2) sin theta sin phi$],
+  [$display((3/(4 pi))^(1/2) sin theta sin phi)$],
 
   [3],
   [0],
   [$2/(9 sqrt(3)) (Z/a_0)^(3/2) (3 - (2 Z r)/a_0 - 2 (Z^2 r^2)/(9 a_0^2)) e^(-(Z r)/(3 a_0))$],
   [],
   [$z$],
-  [$(3/(4 pi))^(1/2) cos theta$],
+  [$display((3/(4 pi))^(1/2) cos theta)$],
 )
+
+#context if target() == "html" {
+  html.elem(
+    "div",
+    attrs: (class: "typst-table"),
+    orbital-wave-functions-table,
+  )
+} else {
+  orbital-wave-functions-table
+}
 
 For example, the electron of the ground-state Hydrogen atom has wave function $ Psi_(100) (r, theta, phi) = (2 e^(- r/a_0))/(a_0^(3/2)) times (1/(4pi))^(1/2), $ where $a_0$ is the _Bohr radius_, the natural length scale of hydrogen:
 
@@ -84,19 +94,17 @@ $
 In the factor $e^(-Z r/a_0)$, $a_0/Z$ controls how rapidly the orbital decreases with distance from the nucleus.
 
 
-When $ell = 0$, the angular wave function is constant, so the orbital is spherically symmetric, defined as _$s$ orbital_. When $ell = 1$, the angular wave function makes the form of the orbital to be two diametrically opposite lobes, defined as _$p$ orbital_. When $ell = 2$, the orbital form depends on $m_ell$: $m_ell = 0$ gives a dumbell and ring form while $m_ell != 0$ gives a clover form.
+When $ell = 0$, the angular wave function is constant, so the orbital is spherically symmetric, defined as _$s$ orbital_. When $ell = 1$, the angular wave function makes the form of the orbital to be two diametrically opposite lobes, defined as _$p$ orbital_. When $ell = 2$, the orbital form depends on $m_ell$: $m_ell = 0$ gives a dumbbell and ring form while $m_ell != 0$ gives a clover form.
 
 To visualize the distribution technically, three common ways are $abs(Psi)^2$ plotted in space where density of dots is used to represent probability, $Psi$ vs. $r$, and probabilistic distribution vs. $r$.
 
 Define the radial probabilistic distribution (rpd) as the probability that an electron is at a distance $r$ from the nuclei (treated as a point). Let $V$ denote the spherical shell $r$ away from the nuclei with thickness $dif r$, notice the probability of an electron in $Omega$ is $ P(r)dif r&= integral_V abs(Psi_(n ell m) (r, theta, phi))^2 dif V \ &= abs(R_(n ell)^2 (r)) integral abs(Y_(ell m) (theta, phi)) dif V \ &= r^2 abs(R_(n ell)^2 (r)) dif r integral abs(Y_(ell m) (theta, phi)) dif Omega #tag[($dif V = r^2 dif r sin theta dif theta dif phi$)]. $ Assume $Y_(ell m)$ is normalized such that $ integral_(ell m) abs(Y_(ell m) (theta) phi) diff Omega = 1, $ then $ P(r) = r^2 abs(R_(n ell) (r))^2. $
-#image("/assets/image-3.png")
-
+#figure-wrapper(figure(potential-frame(image("/assets/image-3.png"))))
 As an analytical result, the total nodes of the wave function, is $n - 1$. Categorizing the nodes by whether the radial component is $0$ or the angular component is $0$, analytical results show that the number of radial nodes is $n - 1 -ell$ while that of the angular nodes is $ell$.
 
 Since the radial probability distribution is non-negative, the rough shape of the rpd-r could be determined.
 
-#image("/assets/image-7.png")
-
+#figure-wrapper(figure(potential-frame(image("/assets/image-7.png"))))
 Despite the most probable radial distance in the $p$ orbital are closer the nucleus than the $s$ orbital, the $s$ orbital has a portion from the origin to the first node. Hence, $s$ orbital is _less_ shielded compared to the $p$ orbital, which is less shielded compared the $d$ orbital, which is less shielded compared the $f$ orbital.
 
 Electrons have spins $1/2$ and $-1/2$. By Pauli's Exclusion Principle, no two particles have the same quantum number, so one orbital contains two electrons.

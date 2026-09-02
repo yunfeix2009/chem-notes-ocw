@@ -8,5 +8,6 @@
     #include "lewis/index.typ"
     #include "MO/index.typ"
     #include "geometry/index.typ"
+    #include "valence/index.typ"
   ],
 )

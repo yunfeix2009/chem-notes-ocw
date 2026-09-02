@@ -17,6 +17,7 @@
 #include "atoms/index.typ"
 #include "molecules/index.typ"
 #include "reactions/index.typ"
+#include "applications/index.typ"
 
 
 #set heading(numbering: "A.1")
