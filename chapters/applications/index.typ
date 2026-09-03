@@ -5,6 +5,7 @@
   title: [Applications of Chemical Principles],
   route: "app",
   children: [
+    #include "en/index.typ"
     #include "biofuel/index.typ"
   ],
 )

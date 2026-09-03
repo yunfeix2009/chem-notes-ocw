@@ -6,8 +6,8 @@
   route: "trends",
   children: [
     #include "ie/index.typ"
-    #include "rad/index.typ"
     #include "ea/index.typ"
+    #include "en/index.typ"
   ],
 )
 

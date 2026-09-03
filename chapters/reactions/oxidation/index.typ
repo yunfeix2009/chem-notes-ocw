@@ -4,4 +4,5 @@
 #show: docs-subchapter.with(
   title: [Oxidation and Reduction],
   route: "oxidation",
+  label: "sec:oxidation",
 )
