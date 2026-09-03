@@ -8,6 +8,7 @@
     #include "ie/index.typ"
     #include "ea/index.typ"
     #include "en/index.typ"
+    #include "rad/index.typ"
   ],
 )
 

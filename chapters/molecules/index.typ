@@ -5,6 +5,7 @@
   title: [Molecules],
   route: "molecules",
   children: [
+    #include "bonds/index.typ"
     #include "lewis/index.typ"
     #include "MO/index.typ"
     #include "geometry/index.typ"
